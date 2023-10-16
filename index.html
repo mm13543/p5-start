@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>p5 sketch</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+
+	<link rel="stylesheet" href="style.css">
+
+	<script type="text/javascript" src="./libraries/p5.min.js"></script>
+	
+	<script type="text/javascript" src="script.js"></script>
+
+	<style>
+		.gif-cell {
+			display: inline-block;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid #333;
+			cursor: pointer;
+			transition: transform 0.3s;
+			position: relative;
+		}
+		.gif-cell:hover {
+		    transform: scale(1.1);
+		}
+		@keyframes wiggle {
+			0% {
+				transform: rotate(0deg);
+			}
+			25% {
+				transform: rotate(4deg);
+			}
+			50% {
+				transform: rotate(-4deg);
+			}
+			75% {
+				transform: rotate(4deg);
+			}
+			100% {
+				transform: rotate(0deg);
+			}
+		}
+		.gif-cell:hover {
+			animation: wiggle 0.5s infinite;
+		}
+		.download-link {
+			display: inline-block;
+			padding: 5px 10px;
+			background-color: #007BFF;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			margin-top: 5px;
+			transition: background-color 0.3s;
+		}
+		.download-link:hover {
+			background-color: #0056b3;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>GIF Search</h1>
+	<input type="text" id="searchInput" placeholder="Search GIFs">
+	<button onclick="searchGIFs()">Search</button>
+	<div id="gifContainer"></div>
+	<div id="sketchContainer"></div>
+	<div id="pagination">
+		<button id="prevButton">Previous</button>
+		<button id="nextButton">Next</button>
+	</div>
+</body>
+</html>
